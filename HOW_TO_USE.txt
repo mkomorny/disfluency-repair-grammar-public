@@ -1,0 +1,54 @@
+HOW TO USE: disfluency-repair-grammar
+====================================
+
+PURPOSE
+  Model false-start syntax, restart mechanisms, stutter/block behavior, filler particle
+  densities per 100 words, turn-latching latency (ms), and dialogue rewrite rules.
+
+CAPABILITIES
+  - Quantify filler token density per 100 words and distribution ("uh", "you know", "listen")
+  - Model false-start rates, abandonment thresholds, and glottal cut-off frequencies
+  - Formalize self-repair mechanics: backtrack-and-replace vs. forward elaboration
+  - Measure turn-latching latency (ms) and overlap interruption persistence (+dB volume)
+  - Provide regex/procedural rewrite rules to convert clean prose into authentic spoken dialogue
+  - Output machine-readable disfluency_grammar.json
+
+USE CASES
+  - "Make this generated script sound like a real, stumbling, spontaneous speaker"
+  - You want to know the exact frequency of 'you know' vs 'look' for an impression
+  - You need to program an AI conversation agent to handle interruptions without yielding
+  - You want to eliminate sterile, perfectly structured LLM prose in voice acting scripts
+
+IDEAS
+  - Pipe generated LLM dialogue through this skill's rewrite rules before TTS synthesis
+  - Pair with temporal-pause-breath-architecture to insert pauses after false starts
+  - Feed dialogue rules into synthesis-control-compiler LLM prompt
+
+PROMPTS YOU CAN PASTE
+  /disfluency-grammar Queens-male-orator
+
+  disfluency grammar of Steve Jobs
+
+  speech repair profile for this speaker
+
+  model false starts and filler words for this dialogue character
+
+  Give me the rewrite rules to turn formal text into this speaker's spoken cadence.
+
+EXAMPLE FLOW
+  You:   /disfluency-grammar Queens-male-orator
+  Model: 1. Filler Density:
+         - 5.4 per 100 words; "you know" (38%), "look" (24%), "uh" (20%), "listen" (10%)
+         2. False-Start Mechanics:
+         - 14.2% abandonment rate; abrupt glottal cut-off [ʔ] after 4 words
+         3. Turn Dynamics:
+         - Turn-latching: 65ms; overlap persistence: +3.5 dB volume boost without yielding
+         4. Rewrite Rules:
+         - Trigger: complex subordinate clause -> Split into parataxis with "And let me tell you"
+         [disfluency_grammar.json]
+
+DEFAULT GOALS IF YOU DON'T NAME ONE
+  1. Filler token density per 100 words and distribution
+  2. False-start abandonment rate and glottal cut-off mechanics
+  3. Turn-latching latency (ms) and overlap response
+  4. Machine-readable disfluency_grammar.json block
